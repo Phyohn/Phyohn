@@ -2,7 +2,7 @@
 #chmod u+x xxx/maru.command
 #xattr -rc xxx/maru.command
 cd `dirname $0`
-cat .../*.chlsj* | sed 's/ //g'| sed -e 's/\:443\,\"path\"\:\"\/api\/v1\.7\.4/\n/g' | >new.txt
+cat .../*.c.*j* | sed 's/ //g'| sed -e 's/\:443\,\"path\"\:\"\/api\/v1\.7\.4/\n/g' | >new.txt
 loop=($(cat new.txt | grep '/hall/machines","query":"date'|sed 's/.*hall_code=\([0-9]\{4\}\)&model_code=\([0-9]\{6\}\)".*202[0-9]\{5\}\(.*\)\(202[0-9]\{5\}\)\(.*\)\(202[0-9]\{5\}\).*/\6,\2,\1,\5/g'))
 
 echo ${#loop[*]} #elementcounter
