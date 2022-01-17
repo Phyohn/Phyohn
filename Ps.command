@@ -5,7 +5,7 @@ cd `dirname $0`
 #orgfilename
 touch `date +%d%H%M-%S`.csv
 newcsv=$(ls -1t *.csv | head -1)
-array=($(grep -a 'pageMax\\\"\:\d\}\"' /xxx/*.har | sed 's/ //g' | cut -c 1-6000 ))
+array=($(grep -a 'pageMax\\\"\:\d\}\"' /xxx/*.h.* | sed 's/ //g' | cut -c 1-6000 ))
 echo ${#array[*]} #counter
 #冗長
 newarray=($(for ((i=1; i<300; i++));do echo ${array[i]};done))
